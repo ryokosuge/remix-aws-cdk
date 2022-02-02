@@ -21,7 +21,7 @@ function isValidPostAttributes(
 }
 
 export async function getPost(slug: string) {
-  const res = await fetch(`http://192.168.0.75:3000/res/posts/${slug}.md`);
+  const res = await fetch(`${process.env.ASSET_HOST ?? ""}/res/posts/${slug}.md`);
   const text = await res.text();
   const { attributes, body } = parseFrontMatter<PostMarkdownAttributes>(text);
   invariant(
@@ -33,6 +33,6 @@ export async function getPost(slug: string) {
 };
 
 export async function getPosts() {
-  const res = await fetch("http://192.168.0.75:3000/res/posts.json");
+  const res = await fetch(`${process.env.ASSET_HOST ?? ""}/res/posts.json`);
   return res.json();
 }
