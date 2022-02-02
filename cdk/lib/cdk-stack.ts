@@ -12,7 +12,7 @@ import * as path from "path";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 // @ts-ignore -- implicitly 'any' type.
-import * as remixConfig from "../../remix.config";
+import * as remixConfig from "../../frontend/remix.config";
 
 export class CdkStack extends Stack {
 

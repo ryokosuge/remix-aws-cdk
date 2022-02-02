@@ -1,8 +1,5 @@
 node_modules
 
-/.cache
-/server/build
-/public/build
-
-sam.json
-sam.yaml
+/app/.cache
+/app/server/build
+/app/public/build
