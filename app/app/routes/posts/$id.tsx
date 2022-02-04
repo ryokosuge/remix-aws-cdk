@@ -1,8 +1,8 @@
 import React from "react";
 import { LoaderFunction, useLoaderData } from "remix"
 
-import { getPost } from "../../libs/posts/posts.server";
-import type { Post } from "../../libs/posts/types";
+import { getPost } from "../../lib/posts/posts.server";
+import type { Post } from "../../lib/posts/types";
 
 export const loader: LoaderFunction = async ({ params }) => {
   return getPost(params.id ?? "");

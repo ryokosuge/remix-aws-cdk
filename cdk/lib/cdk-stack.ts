@@ -82,6 +82,8 @@ export class CdkStack extends Stack {
 
     const cachePolicy = new cloudfront.CachePolicy(this, `${id}-cloudfront-apigateway-cachepolicy`, {
       queryStringBehavior: cloudfront.CacheQueryStringBehavior.allowList("_data"),
+      enableAcceptEncodingGzip: true,
+      enableAcceptEncodingBrotli: true,
     })
     this.distribution = new cloudfront.Distribution(
       this,

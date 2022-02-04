@@ -2,8 +2,8 @@ import { FC } from "react";
 import { Link, useLoaderData } from "remix";
 import type { LoaderFunction } from "remix";
 
-import { getPosts } from "../../libs/posts/posts.server";
-import type { Post } from "../../libs/posts/types";
+import { getPosts } from "../../lib/posts/posts.server";
+import type { Post } from "../../lib/posts/types";
 
 export const loader: LoaderFunction = async () => {
   return getPosts();
