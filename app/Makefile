@@ -11,6 +11,10 @@ build:
 		npm i --production && \
 		rm package.json package-lock.json
 
+.PHONY: lint
+lint:
+	npm run lint
+
 .PHONY: clean
 clean:
 	rm -rf {server,public}/build

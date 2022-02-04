@@ -23,6 +23,13 @@ cdk/deploy:
 destroy:
 	$(MAKE) -C cdk destroy
 
+.PHONY: lint
+lint: app/lint
+
+.PHONY: app/lint
+app/lint:
+	$(MAKE) -C app lint
+
 .PHONY: clean
 clean: app/clean
 
