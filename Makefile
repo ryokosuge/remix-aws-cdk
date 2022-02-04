@@ -22,3 +22,10 @@ cdk/deploy:
 .PHONY: destroy
 destroy:
 	$(MAKE) -C cdk destroy
+
+.PHONY: clean
+clean: app/clean
+
+.PHONY: app/clean
+app/clean:
+	$(MAKE) -C app clean

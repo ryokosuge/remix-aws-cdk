@@ -10,3 +10,9 @@ build:
 		rm -rf node_modules && \
 		npm i --production && \
 		rm package.json package-lock.json
+
+.PHONY: clean
+clean:
+	rm -rf {server,public}/build
+	rm -rf server/node_modules
+	rm -rf .cache
