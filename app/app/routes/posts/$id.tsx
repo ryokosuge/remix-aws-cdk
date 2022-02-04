@@ -1,17 +1,11 @@
 import React from "react";
 import { LoaderFunction, useLoaderData } from "remix"
 
-type Post = {
-  id: string;
-  slug: string;
-  title: string;
-  body: string;
-}
+import { getPost } from "../../libs/posts/posts.server";
+import type { Post } from "../../libs/posts/types";
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const res = await fetch(`https://61fc7b6d3f1e34001792c8ca.mockapi.io/api/v1/posts/${params.id}`);
-  const json = await res.json();
-  return json;
+  return getPost(params.id ?? "");
 }
 
 type Props = {};

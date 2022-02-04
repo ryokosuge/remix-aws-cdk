@@ -2,25 +2,16 @@ import { FC } from "react";
 import { Link, useLoaderData } from "remix";
 import type { LoaderFunction } from "remix";
 
-type Post = {
-  id: string;
-  slug: string;
-  title: string;
-  body: string;
-}
+import { getPosts } from "../../libs/posts/posts.server";
+import type { Post } from "../../libs/posts/types";
 
 export const loader: LoaderFunction = async () => {
-  const res = await fetch("https://61fc7b6d3f1e34001792c8ca.mockapi.io/api/v1/posts");
-  const json = await res.json();
-  console.log(json);
-  return json;
+  return getPosts();
 }
 
 type Props = {};
-
 const Page: FC<Props> = () => {
   const posts = useLoaderData<Post[]>();
-  console.log(posts);
   return (
     <div>
       <h1>Posts</h1>
