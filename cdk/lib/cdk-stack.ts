@@ -80,7 +80,7 @@ export class CdkStack extends Stack {
       destinationBucket: staticBucket,
     });
 
-    const cachePolicy = new cloudfront.CachePolicy(this, `${id}-cloudfront-cachePolicy`, {
+    const cachePolicy = new cloudfront.CachePolicy(this, `${id}-cloudfront-apigateway-cachepolicy`, {
       queryStringBehavior: cloudfront.CacheQueryStringBehavior.allowList("_data"),
     })
     this.distribution = new cloudfront.Distribution(
