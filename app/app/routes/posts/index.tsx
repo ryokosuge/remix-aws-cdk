@@ -7,7 +7,7 @@ import type { Post } from "../../lib/posts/types";
 
 export const loader: LoaderFunction = async () => {
   return getPosts();
-}
+};
 
 type Props = {};
 const Page: FC<Props> = () => {
@@ -16,7 +16,7 @@ const Page: FC<Props> = () => {
     <div>
       <h1>Posts</h1>
       <ul>
-        {posts.map(post => (
+        {posts.map((post) => (
           <li key={post.slug}>
             <Link to={post.id}>{post.title}</Link>
           </li>
@@ -24,6 +24,6 @@ const Page: FC<Props> = () => {
       </ul>
     </div>
   );
-}
+};
 
 export default Page;
